@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Quicksand';
+  background: url('../img/showcase.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.back a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card {
+  background-color: #f7f7f7;
+}
+
+form a {
+  text-decoration: none;
+  color: #00d1b2;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form .btn {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+form .login {
+  background-color: #00d1b2;
+  border: none;
+}
+
+form .login:hover {
+  background-color: #33afa3;
+}
+
+form .link span {
+  font-size: .900rem;
+}

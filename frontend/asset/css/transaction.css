@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Quicksand';
+  background: url('../img/showcase.jpg') no-repeat center center/cover fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.back a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h6 i {
+  font-size: 1.2rem;
+}
+
+.card-body img {
+  width: 9rem;
+}
+
+.card-body a i {
+  font-size: 1.5rem;
+}
+
+.card__sending,
+.card__receive {
+  border-radius: .8rem;
+}
+.card__sending a,
+.card__receive a {
+  border-radius: .6rem;
+}
+
+.card__sending {
+  background-color: hsl(222, 66%, 53%) !important;
+}
+.card__sending a {
+  background-color: hsl(222, 97%, 77%) !important;
+}
+.card__receive {
+  background-color: hsl(148, 71%, 44%) !important;
+}
+.card__receive a {
+  background-color: hsl(148, 91%, 74%) !important;
+}
+
+.btn {
+  border: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 100% !important;
+  }
+}

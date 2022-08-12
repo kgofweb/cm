@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Quicksand';
+  color: #fff;
+  background: url('../img/showcase.jpg') no-repeat center center/cover fixed;
+  height: 100vh;
+}
+
+img {
+  width: 7rem;
+}
+
+.showcase h2 {
+  font-weight: 600;
+}
+
+.showcase p {
+  font-size: 1.1rem;
+}
+
+.title p span {
+  color: #ff4444;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* .btn__actions a {
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  border: none;
+} */
+
+/* .transaction {
+  background-color: #fe7f48 !important;
+}
+.receive {
+  background-color: #a55eea !important;
+}
+.tracker {
+  background-color: #ffc048 !important;
+}
+.login {
+  background-color: #20bf6b !important;
+}
+
+.btn__actions .card {
+  border-radius: 1rem;
+  padding: 0 !important;
+}
+
+.btn__actions .card img {
+  max-width: 7rem; 
+}
+
+.btn__actions .transaction a {
+  background-color: #edab8e !important; 
+}
+.btn__actions .receive a {
+  background-color: #c494f5 !important; 
+}
+.btn__actions .tracker a {
+  background-color: #fcd297 !important; 
+}
+.btn__actions .signin a {
+  background-color: #74bbe8 !important; 
+}
+.btn__actions .login a {
+  background-color: #7aeab2 !important; 
+} */
