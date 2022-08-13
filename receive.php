@@ -7,7 +7,7 @@
   <div class="container">
     <!-- Back button -->
     <div class="back mt-3">
-      <a href="./index">
+      <a href="./index.php">
         <i class="fa-solid fa-angle-left"></i>
         Retour
       </a>
@@ -34,7 +34,7 @@
               <button class="btn text-white d-block w-100 mt-4 mb-2 fw-bold" name="validate">Effectuer</button>
             </form>
             <div class="text-start mt-4">
-              <p>Cliquez ici pour <span><a href="./send">effectuer un transfert</a></span></p>
+              <p>Cliquez ici pour <span><a href="./send.php">effectuer un transfert</a></span></p>
             </div>
           </div>
         </div>
