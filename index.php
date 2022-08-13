@@ -28,7 +28,7 @@
               <div>
                 <img src="./frontend/asset/img/transaction.webp" alt="ChapMoney">
               </div>
-              <a href="./send" class="btn btn-primary px-4 py-3 float-end">
+              <a href="./send.php" class="btn btn-primary px-4 py-3 float-end">
                 <i class="fa-solid fa-angle-right"></i>
               </a>
             </div>
@@ -44,7 +44,7 @@
               <div>
                 <img src="./frontend/asset/img/transaction.webp" alt="ChapMoney">
               </div>
-              <a href="./receive" class="btn btn-primary px-4 py-3 float-end">
+              <a href="./receive.php" class="btn btn-primary px-4 py-3 float-end">
                 <i class="fa-solid fa-angle-right"></i>
               </a>
             </div>
