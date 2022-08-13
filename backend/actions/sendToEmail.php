@@ -73,5 +73,5 @@ if (isset($_POST['send'])) {
 
 // Return to home page
 if (isset($_POST['back'])) {
-  header('Location: ./index');
+  header('Location: ./index.php');
 }
