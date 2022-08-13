@@ -23,9 +23,9 @@
                 <b>Envoi</b>
               </h4>
               <div>
-                <img src="./asset/img/transaction.webp" alt="ChapMoney">
+                <img src="./frontend/asset/img/transaction.webp" alt="ChapMoney">
               </div>
-              <a href="./send" class="btn btn-primary px-4 py-3 float-end">
+              <a href="./frontend/send.php" class="btn btn-primary px-4 py-3 float-end">
                 <i class="fa-solid fa-angle-right"></i>
               </a>
             </div>
@@ -39,9 +39,9 @@
                 <b>Retrait</b>
               </h4>
               <div>
-                <img src="./asset/img/receive.webp" alt="ChapMoney">
+                <img src="./frontend/asset/img/receive.webp" alt="ChapMoney">
               </div>
-              <a href="./receive" class="btn btn-success px-4 py-3 float-end">
+              <a href="./receive.php" class="btn btn-success px-4 py-3 float-end">
                 <i class="fa-solid fa-angle-right"></i>
               </a>
             </div>

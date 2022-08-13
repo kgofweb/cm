@@ -9,7 +9,7 @@
   <div class="container">
     <!-- Back button -->
     <div class="back my-4">
-      <a href="./index">
+      <a href="./index.php">
         <i class="fa-solid fa-angle-left"></i>
         Retour
       </a>
@@ -39,14 +39,12 @@
     <!-- Start Form -->
     <form method="post">
       <div class="tab-content form w-50 mx-auto" id="pills-tabContent">
-
         <!-- Set error -->
         <?php 
           if(isset($errorMsg)) { 
             echo '<div class="alert alert-danger">'.$errorMsg.'</div>'; 
           }
         ?>
-
         <!-- Expéditeur -->
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
           <div class="card">
