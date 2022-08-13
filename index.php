@@ -17,7 +17,7 @@
     </div>
 
     <main>
-      <div class="row my-5">
+      <div class="row my-5 justify-content-center">
         <div class="col">
           <div class="card card__sending mb-4" style="width: 35rem;">
             <div class="card-body">
