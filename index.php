@@ -19,7 +19,7 @@
     <main>
       <div class="row my-5">
         <div class="col">
-          <div class="card card__sending mb-4" style="width: 30rem;">
+          <div class="card card__sending mb-4" style="width: 40rem;">
             <div class="card-body">
               <h4 class="text-start">
                 <i class="uil uil-message"></i>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card card__receive" style="width: 30rem;">
+          <div class="card card__receive" style="width: 40rem;">
             <div class="card-body">
               <h4 class="text-start">
                 <i class="uil uil-message"></i>
