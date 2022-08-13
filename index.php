@@ -4,27 +4,29 @@
 <?php include './includes/headIndex.php' ?>
 
 <body>
-  <div class="container d-flex align-items-center justify-content-center flex-column">
+  <div class="container">
     <!-- =========== Header =========== -->
-    <div class="logo mt-4">
-      <a href="./index.php"><img src="./frontend/asset/img/logo.png" alt="ChapMoney"></a>
+    <div class="logo mt-4 text-center">
+      <a href="./index.php">
+        <img src="./frontend/asset/img/logo.png" alt="ChapMoney">
+      </a>
     </div>
 
     <!-- =========== Main =========== -->
     <div class="title text-center">
-      <h3 class="mt-3"></h3>
+      <h3 class="mt-4"></h3>
       <p>Transférer de l’argent n’a jamais été aussi <span>facile</span>, <span>rapide</span> et <span>fiable</span></p>
     </div>
 
-    <main>
-      <div class="row my-5 justify-content-center">
-        <div class="col">
-          <div class="card card__sending mb-4" style="width: 35rem;">
+    <div class="text-warning justify-content-center mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 mb-4" style="max-width: 35rem;">
+          <div class="card card__sending bg-primary">
             <div class="card-body">
-              <h4 class="text-start">
+              <h3 class="text-start text-white">
                 <i class="uil uil-message"></i>
                 <b>Envoi</b>
-              </h4>
+              </h3>
               <div>
                 <img src="./frontend/asset/img/transaction.webp" alt="ChapMoney">
               </div>
@@ -34,25 +36,26 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card card__receive" style="width: 35rem;">
+        <div class="col-12 mb-4" style="max-width: 35rem;">
+          <div class="card card__receive mb-4">
             <div class="card-body">
-              <h4 class="text-start">
-                <i class="uil uil-message"></i>
-                <b>Envoi</b>
-              </h4>
+              <h3 class="text-start text-white">
+                <i class="uil uil-money-withdrawal"></i>
+                <b>Retrait</b>
+              </h3>
               <div>
-                <img src="./frontend/asset/img/transaction.webp" alt="ChapMoney">
+                <img src="./frontend/asset/img/receive.webp" alt="ChapMoney">
               </div>
-              <a href="./receive.php" class="btn btn-primary px-4 py-3 float-end">
+              <a href="./receive.php" class="btn btn-success px-4 py-3 float-end">
                 <i class="fa-solid fa-angle-right"></i>
               </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-
+      
       <!-- =========== Actions =========== -->
       <!-- <div class="btn__actions mt-4">
         <div class="justify-content-center mt-0">
@@ -128,7 +131,7 @@
           </div>
         </div>
       </div> -->
-    </main>
+
   </div>
 </body>
 </html>

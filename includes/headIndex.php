@@ -5,19 +5,20 @@
   <meta name="description"
   content="Transférer de l'argent n'a jamais été aussi facile avec ChapMoney. C'est simple, rapide et fiable. Transférer et récevez votre argent à l'instant.">
   <!-- CSS B -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <!-- Font Awesome -->
   <?php include './frontend/asset/icons/fontAwesome.php' ?>
+  <!-- UnIcons -->
+  <?php include './frontend/asset/icons/icons.php' ?>
   <!-- Link Favicon -->
   <?php include './frontend/asset/icons/favicon.php' ?>
   <!-- Title -->
   <?php include 'title.php' ?>
   <!-- My CSS -->
-  <link rel="stylesheet" href="./frontend/asset/css/transaction.css">
-  <link rel="stylesheet" href="./frontend/asset/css/style.css">
+  <link rel="stylesheet" href="./frontend/asset/css/styles.css">
 
   
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
   <!-- Scroll Reveal -->
   <script src="./frontend/asset/js/scrollreveal.min.js" defer></script>
   <!-- Text Writer -->
