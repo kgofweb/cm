@@ -6,15 +6,10 @@
 <?php include './includes/sendHead.php' ?>
 
 <body>
-  <div class="container">
-    <!-- Back button -->
-    <div class="back my-4">
-      <a href="./index.php">
-        <i class="fa-solid fa-angle-left"></i>
-        Retour
-      </a>
-    </div>
+  <!-- Navbar -->
+  <?php include './includes/nav.php' ?>
 
+  <div class="container">
     <!-- Nav Tabs -->
     <ul class="nav nav-pills my-4 justify-content-center" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -37,7 +32,7 @@
       </li>
     </ul>
     <!-- Start Form -->
-    <form method="post">
+    <form method="POST">
       <div class="tab-content form w-50 mx-auto" id="pills-tabContent">
         <!-- Set error -->
         <?php 
@@ -53,7 +48,10 @@
               <hr>
               <!-- Choose Country -->
               <div class="mb-3">
-                <span class="fw-bold">Pays</span>
+                <span class="fw-bold d-flex align-items-center">
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">public</span>
+                  Pays
+                </span>
                 <select class="form-select" id="country__one" name="countryOne">
                   <option value="">--Selectionner votre Pays--</option>
                   <option data-mask="+7 (999) 999 99-99" value="russie">Russie</option>
@@ -69,15 +67,20 @@
               </div>
               <!-- Mode d'envoi -->
               <div class="mb-3">
-                <span class=" fw-bold">Mode d'envoi</span>
+                <span class="fw-bold d-flex align-items-center">
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">send</span>
+                  Mode d'envoi
+                </span>
                 <select class="form-select" name="sendMode" id="modeSend">
                   <option>Choisir obligatoirement un pays</option>
                 </select>
               </div>
               <!-- Tel Number -->
               <div class="mb-3">
-                <i class="uil uil-mobile-android-alt"></i>
-                <span class=" fw-bold">N° téléphone</span>
+                <span class="fw-bold d-flex align-items-center">
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">smartphone</span>
+                  Téléphone
+                </span>
                 <div class="row">
                   <div class="col">
                     <input type="text" name="numberPhoneOne" class="form-control numberTel" id="phoneNumber" >
@@ -95,7 +98,12 @@
               <hr>
               <!-- Choose Country -->
               <div class="mb-3">
-                <span class=" fw-bold">Pays</span>
+                <span class=" fw-bold">
+                  <span class="fw-bold d-flex align-items-center">
+                    <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">public</span>
+                    Pays
+                  </span>
+                </span>
                 <select class="form-select" id="country__two" name="countryTwo" >
                   <option>--Selectionner votre Pays--</option>
                   <option data-mask="+7 (999) 999 99-99" value="russie">Russie</option>
@@ -111,7 +119,10 @@
               </div>
               <!-- Tel Number -->
               <div class="mb-3">
-                <span class=" fw-bold">N° téléphone</span>
+                <span class="fw-bold d-flex align-items-center">
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">smartphone</span>
+                  Téléphone
+                </span>
                 <div class="row">
                   <div class="col">
                     <input type="text" name="numberPhoneTwo" class="form-control numberTel__two" id="phoneNumber__two">
@@ -128,7 +139,10 @@
               <h5 class="text-success fw-bold">Indiquer le montant à transférer</h5>
               <hr>
               <div class="mb-3">
-                <span class=" fw-bold">Somme</span>
+              <span class="fw-bold d-flex align-items-center">
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">paid</span>
+                  Montant
+                </span>
                 <input type="number" name="amount" class="form-control numberTel" placeholder="5000" id="amount" >
               </div>
               
