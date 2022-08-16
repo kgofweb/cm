@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Quicksand';
+  background: url('../img/showcase.jpg') no-repeat center center/cover fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.card {
+  width: 45%;
+  margin: 2rem auto;
+  border-radius: .6rem;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.countdown .min {
+  margin-right: 2rem;
+  border-radius: 5%;
+}
+.countdown .min h2 {
+  color: #10ac84;
+}
+.countdown .min > span,
+.countdown .sec > span {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: smaller;
+}
+.countdown .sec {
+  border-radius: 5%;
+}
+.countdown .sec h2 {
+  color: #ff7675;
+}
+
+@media screen and (max-width: 540px) {
+  .card {
+    width: 55% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100% !important;
+  }
+}

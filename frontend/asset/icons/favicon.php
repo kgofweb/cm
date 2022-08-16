@@ -1,2 +1,2 @@
 <!-- Link Favicon -->
-<link rel="shortcut icon" href="./asset/img/favicon/link-logo.png" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon/link-logo.png" type="image/x-icon">

@@ -1,4 +1,8 @@
 <?php
+// If we are not different variables
+if (!isset($_SESSION['auth'])) {
+  header('Location: index.php');
+}
 
 // PHP Mailer
 use PHPMailer\PHPMailer\PHPMailer;
@@ -16,7 +20,9 @@ $senderPhone = $_SESSION['numberPhoneOne'];
 $receiverPhone = $_SESSION['numberPhoneTwo'];
 $amount = $_SESSION['amount'];
 
+// Send Email
 if (isset($_POST['send'])) {
+  // Save values in db
   
   // Send to email
   $mail = new PHPMailer(true);
@@ -57,7 +63,7 @@ if (isset($_POST['send'])) {
   $mail->send();
 
   // Redirect user to countdown
-  // header('Location: ./finish.php');
+  header('Location: ./finish.php');
 
   echo "
     <script>
@@ -68,5 +74,6 @@ if (isset($_POST['send'])) {
 
 if (isset($_POST['back'])) {
   header('Location: ./send.php');
-  // session_destroy();
+  // Destroy all variables who are in table
+  session_destroy();
 }

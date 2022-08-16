@@ -12,7 +12,7 @@
   <?php include './includes/nav.php' ?>
 
   <div class="container">
-    <form method="POST">
+    <div>
       <div class="card mb-4">
         <div class="card-body text-center">
           <div class="container">
@@ -56,7 +56,7 @@
                   <span class="material-icons" style="font-size: 1.5rem;">smartphone</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
-                  <?php 
+                  <?php
                     if (isset($senderPhone)) {
                       echo $senderPhone;
                     }
@@ -104,7 +104,7 @@
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php 
                     if (isset($amount)) {
-                      echo $amount;
+                      echo $amount. ' XOF';
                     }
                   ?>
                 </span>
@@ -112,14 +112,44 @@
             </div>
 
             <div class="float-right">
-              <button name="back" class="btn btn-secondary">Annuler</button>
-              <button name="send" class="btn btn-success ms-2">Valider</button>
+              <button class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Valider</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form method="POST">
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content text-center">
+            <div class="mt-4">
+              <span class="material-symbols-outlined fw-bold" style="color: #2ed573; font-size: 4rem;">running_with_errors</span>
+            </div>
+            <h4 class="fw-bold modal-title my-3">Votre bénéficiaire recvra: <br> 
+              <span id="total">
+                <?php 
+                  if (isset($amount)) {
+                    echo number_format($amount, 2, ',', ' '). ' XOF';
+                  }
+                ?>
+              </span>
+            </h4>
+            <div class="modal-footer justify-content-center">
+              <button name="back" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+              <button name="send" class="btn btn-success">Valider</button>
             </div>
           </div>
         </div>
       </div>
     </form>
   </div>
+
+  <script>
+    $(".send").click(function(event) {
+      event.preventDefault();
+    });
+  </script>
   
 </body>
 </html>
