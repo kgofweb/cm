@@ -14,6 +14,7 @@ if (isset($_POST['send'])) {
     $amount = $_POST['amount'];
 
     // Get data from selected
+    $_SESSION['auth'] = true;
     $_SESSION['countryOne'] = $countryOne;
     $_SESSION['countryTwo'] = $countryTwo;
     $_SESSION['sendMode'] = $sendMode;
