@@ -6,12 +6,14 @@
 <?php include './includes/sendHead.php' ?>
 
 <body>
-  <!-- Navbar -->
-  <?php include './includes/nav.php' ?>
-
   <div class="container">
+    <a href="./index.php" class="navbar-brand text-white mt-4">
+      <i class="fa-solid fa-angle-left"></i>
+      Retour
+    </a>
+
     <!-- Nav Tabs -->
-    <ul class="nav nav-pills my-4 justify-content-center" id="pills-tab" role="tablist">
+    <ul class="nav nav-pills my-5 justify-content-center" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link btn-primary text-white active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
           role="tab" aria-controls="pills-home" aria-selected="true">
@@ -117,6 +119,16 @@
                   <option data-mask="(+221) 99 999 99 99" value="senegal">Sénégal</option>
                 </select>
               </div>
+              <!-- Mode de reception -->
+              <div class="mb-3">
+                <span class="fw-bold d-flex align-items-center">
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">send</span>
+                  Mode d'envoi
+                </span>
+                <select class="form-select" name="receiveMode" id="modeReceive">
+                  <option>Choisir obligatoirement un pays</option>
+                </select>
+              </div>
               <!-- Tel Number -->
               <div class="mb-3">
                 <span class="fw-bold d-flex align-items-center">
@@ -147,8 +159,8 @@
               </div>
               
               <div class="mt-4">
-              <button name="send" class="btn btn-success float-right">Transférer</button>
-              <button name="back" class="btn btn-secondary float-left">Annuler</button>
+                <button name="send" class="btn btn-success float-right">Transférer</button>
+                <button name="back" class="btn btn-secondary float-left">Annuler</button>
               </div>
             </div>
           </div>
@@ -156,6 +168,79 @@
       </div>
     </form>
   </div>
+
+  <script>
+    
+    const modeTransfert = {
+    russie: ['SberBank', 'Tinkoff', 'VTB', 'Autre'],
+    civ: ['Orange Money', 'Moov Money', 'Wave Money', 'MTN Mobile Money'],
+    benin: ['Moov Money', 'MTN Mobile Money'],
+    senegal: ['Orange Money', 'Wave Money'],
+    gabon: ['MTN Mobile Money', 'AIRTEL Mobile Money'],
+    guinee: ['Orange Money', 'MTN  areeba'],
+    mali: ['Orange Money'],
+    niger: ['Moov Flooz'],
+    congo: ['AIRTEL Mobile Money', 'MTN Mobile Money']
+  }
+
+  // DOM
+  const countryOne = document.getElementById('country__one')
+  const countryTwo = document.getElementById('country__two')
+  const mode = document.getElementById('modeSend')
+  const modeReceive = document.getElementById('modeReceive')
+  // Amount
+  const amount = document.getElementById('amount')
+  // Phone Number
+  const phoneOne = document.getElementById('phoneNumber')
+  const phoneTwo = document.getElementById('phoneNumber__two')
+
+  // Event Listener
+  countryOne.addEventListener('change', chooseMode)
+  countryTwo.addEventListener('change', chooseModeReceive)
+
+    function chooseMode() {
+      // Select Value
+      let selectOption = modeTransfert[this.value]
+
+      // Remove old selection
+      while (mode.options.length > 0) {
+        mode.options.remove(0)
+      }
+
+      // From transfert mode table
+      Array.from(selectOption).forEach(function (el) {
+        let option = new Option(el, el)
+        // Append child
+        mode.appendChild(option)
+
+        // Phone Number Mask
+        $(".numberTel").inputmask($('#country__one').find(':selected').data('mask'));
+      })
+    }
+
+    function chooseModeReceive() {
+      // Select Value
+      let selectOption = modeTransfert[this.value]
+
+      // Remove old selection
+      while (modeReceive.options.length > 0) {
+        modeReceive.options.remove(0)
+      }
+
+      // From transfert mode table
+      Array.from(selectOption).forEach(function (el) {
+        let option = new Option(el, el)
+        // Append child
+        modeReceive.appendChild(option)
+      })
+      
+      // Phone Number Mask
+      $(".numberTel__two").inputmask($('#country__two').find(':selected').data('mask'));
+    }
+
+    // countryOne.options[countryOne.selectedIndex].value == ''
+
+  </script>
 
 </body>
 </html>

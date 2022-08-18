@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
@@ -5,6 +7,22 @@
 
 <body>
   <div class="container">
+    <?php if (isset($_SESSION['success'])) {
+      ?>
+          <div class="toast align-items-center text-white bg-success border-0 mt-4" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 1000;">
+            <div class="d-flex">
+              <div class="toast-body">
+                <?php echo $_SESSION['success']; ?>
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        <?php
+        unset($_SESSION['success']);
+        session_destroy();
+      } 
+    ?>
+
     <!-- =========== Header =========== -->
     <div class="logo mt-4 text-center">
       <a href="./index.php">
@@ -25,7 +43,7 @@
             <div class="card-body">
               <h3 class="text-start text-white">
                 <i class="uil uil-message"></i>
-                <b>Envoi</b>
+                <b>Transaction</b>
               </h3>
               <div>
                 <img src="./frontend/asset/img/transaction.webp" alt="ChapMoney">
@@ -36,7 +54,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 mb-4" style="max-width: 35rem;">
+        <!-- <div class="col-12 mb-4" style="max-width: 35rem;">
           <div class="card card__receive mb-4">
             <div class="card-body">
               <h3 class="text-start text-white">
@@ -51,7 +69,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -133,5 +151,13 @@
       </div> -->
 
   </div>
+
+  <script>
+    window.onload = (event) => {
+      let myToast = document.querySelector('.toast')
+      let alertToast = new bootstrap.Toast(myToast)
+      alertToast.show()
+    }
+  </script>
 </body>
 </html>

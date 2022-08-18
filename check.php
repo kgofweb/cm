@@ -8,10 +8,13 @@
 <!-- Head -->
 <?php include './includes/checkHead.php' ?>
 <body>
-  <!-- Nav bar -->
-  <?php include './includes/nav.php' ?>
-
   <div class="container">
+    <!-- Back -->
+    <a href="./send.php" class="navbar-brand text-white mt-4">
+      <i class="fa-solid fa-angle-left"></i>
+      Retour
+    </a>
+
     <div>
       <div class="card mb-4">
         <div class="card-body text-center">
@@ -82,6 +85,18 @@
               </div>
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="fw-bold d-flex align-items-center">
+                  <span class="material-icons" style="font-size: 1.5rem;">send</span>
+                </span>
+                <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
+                  <?php 
+                    if (isset($receiverMode)) {
+                      echo $receiverMode;
+                    }
+                  ?>
+                </span>
+              </div>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="fw-bold d-flex align-items-center">
                   <span class="material-icons" style="font-size: 1.5rem;">smartphone</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
@@ -104,7 +119,7 @@
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php 
                     if (isset($amount)) {
-                      echo $amount. ' XOF';
+                      echo number_format($amount, 2, ',', ' '). ' XOF';
                     }
                   ?>
                 </span>
@@ -120,11 +135,12 @@
     </div>
 
     <form method="POST">
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <!-- data-bs-backdrop="static" -->
+      <div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content text-center">
             <div class="mt-4">
-              <span class="material-symbols-outlined fw-bold" style="color: #2ed573; font-size: 4rem;">running_with_errors</span>
+              <span class="material-symbols-outlined fw-bold" style="color: #2ed573; font-size: 4rem;">task_alt</span>
             </div>
             <h4 class="fw-bold modal-title my-3">Votre bénéficiaire recvra: <br> 
               <span id="total">
@@ -146,6 +162,7 @@
   </div>
 
   <script>
+    // Stop default event
     $(".send").click(function(event) {
       event.preventDefault();
     });
