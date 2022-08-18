@@ -19,9 +19,14 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="./frontend/asset/css/finishTreatment.css">
 
+  <!-- Jquery for time circle -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
   <!-- Mys JS -->
   <!-- <script src="./frontend/asset/js/finishTreatment.js" defer></script> -->
   <!-- <script src="./frontend/asset/js/finish.js" defer></script> -->
-  <script src="./frontend/asset/js/finishTreat.js" defer></script>
+  <!-- <script src="./frontend/asset/js/finishTreat.js" defer></script> -->
+  <script src="./frontend/asset/js/timer.js" defer></script>
 </head>

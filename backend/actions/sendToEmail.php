@@ -9,6 +9,7 @@ if (isset($_POST['send'])) {
     $countryOne = $_POST['countryOne'];
     $countryTwo = $_POST['countryTwo'];
     $sendMode = $_POST['sendMode'];
+    $receiveMode = $_POST['receiveMode'];
     $phoneSender = $_POST['numberPhoneOne'];
     $phoneReceiver = $_POST['numberPhoneTwo'];
     $amount = $_POST['amount'];
@@ -18,6 +19,7 @@ if (isset($_POST['send'])) {
     $_SESSION['countryOne'] = $countryOne;
     $_SESSION['countryTwo'] = $countryTwo;
     $_SESSION['sendMode'] = $sendMode;
+    $_SESSION['receiveMode'] = $receiveMode;
     $_SESSION['numberPhoneOne'] = $phoneSender;
     $_SESSION['numberPhoneTwo'] = $phoneReceiver;
     $_SESSION['amount'] = $amount;

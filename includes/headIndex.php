@@ -16,7 +16,6 @@
   <?php include 'title.php' ?>
   <!-- My CSS -->
   <link rel="stylesheet" href="./frontend/asset/css/styles.css">
-
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
   <!-- Scroll Reveal -->
