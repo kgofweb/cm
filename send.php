@@ -15,19 +15,19 @@
     <!-- Nav Tabs -->
     <ul class="nav nav-pills my-5 justify-content-center" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link btn-primary text-white active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
+        <button class="nav-link btn-primary text-white active fs-6" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
           role="tab" aria-controls="pills-home" aria-selected="true">
           Expéditeur
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link btn-warning text-white" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button"
+        <button class="nav-link btn-warning text-white fs-6" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button"
           role="tab" aria-controls="pills-profile" aria-selected="false">
           Recepteur
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link btn-success text-white" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button"
+        <button class="nav-link btn-success text-white fs-6" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button"
           role="tab" aria-controls="pills-contact" aria-selected="false">
           Montant
         </button>
@@ -45,8 +45,8 @@
         <!-- Expéditeur -->
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
           <div class="card">
-            <div class="card-body">
-              <h5 class="text-primary fw-bold">Expéditeur</h5>
+            <div class="card-body text-center">
+              <h5 class="text-primary fw-bold text-start">Expéditeur</h5>
               <hr>
               <!-- Choose Country -->
               <div class="mb-3">
@@ -89,18 +89,20 @@
                   </div>
                 </div>
               </div>
+
+              <span>Cliquer sur le bouton <b>Recepteur</b> pour continuer</span>
             </div>
           </div>
         </div>
         <!-- Recepteur -->
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
           <div class="card">
-            <div class="card-body">
-              <h5 class="text-warning fw-bold">Récepteur</h5>
+            <div class="card-body text-center">
+              <h5 class="text-start text-warning fw-bold">Récepteur</h5>
               <hr>
               <!-- Choose Country -->
               <div class="mb-3">
-                <span class=" fw-bold">
+                <span class="fw-bold">
                   <span class="fw-bold d-flex align-items-center">
                     <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">public</span>
                     Pays
@@ -141,6 +143,8 @@
                   </div>
                 </div>
               </div>
+
+              <span class="text-center">Cliquer sur le bouton <b>Montant</b> pour continuer</span>
             </div>
           </div>
         </div>
@@ -172,16 +176,16 @@
   <script>
     
     const modeTransfert = {
-    russie: ['SberBank', 'Tinkoff', 'VTB', 'Autre'],
-    civ: ['Orange Money', 'Moov Money', 'Wave Money', 'MTN Mobile Money'],
-    benin: ['Moov Money', 'MTN Mobile Money'],
-    senegal: ['Orange Money', 'Wave Money'],
-    gabon: ['MTN Mobile Money', 'AIRTEL Mobile Money'],
-    guinee: ['Orange Money', 'MTN  areeba'],
-    mali: ['Orange Money'],
-    niger: ['Moov Flooz'],
-    congo: ['AIRTEL Mobile Money', 'MTN Mobile Money']
-  }
+      russie: ['SberBank', 'Tinkoff', 'VTB', 'Autre'],
+      civ: ['Orange Money', 'Moov Money', 'Wave Money', 'MTN Mobile Money'],
+      benin: ['Moov Money', 'MTN Mobile Money'],
+      senegal: ['Orange Money', 'Wave Money'],
+      gabon: ['MTN Mobile Money', 'AIRTEL Mobile Money'],
+      guinee: ['Orange Money', 'MTN  areeba'],
+      mali: ['Orange Money'],
+      niger: ['Moov Flooz'],
+      congo: ['AIRTEL Mobile Money', 'MTN Mobile Money']
+    }
 
   // DOM
   const countryOne = document.getElementById('country__one')

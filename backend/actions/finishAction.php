@@ -77,6 +77,6 @@ if (isset($_POST['send'])) {
 
 // Back and remove all
 if (isset($_POST['back'])) {
+  $_SESSION['error'] = 'Votre transaction a été annuler';
   header('Location: ./index.php');
-  session_destroy();
 }

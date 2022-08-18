@@ -20,7 +20,20 @@
         <?php
         unset($_SESSION['success']);
         session_destroy();
-      } 
+      } else if (isset($_SESSION['error'])) {
+        ?>
+          <div class="toast align-items-center text-white bg-danger border-0 mt-4" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 1000;">
+            <div class="d-flex">
+              <div class="toast-body">
+                <?php echo $_SESSION['error']; ?>
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        <?php
+        unset($_SESSION['success']);
+        session_destroy();
+      }
     ?>
 
     <!-- =========== Header =========== -->
@@ -43,7 +56,7 @@
             <div class="card-body">
               <h3 class="text-start text-white">
                 <i class="uil uil-message"></i>
-                <b>Transaction</b>
+                <b>Envoyer</b>
               </h3>
               <div>
                 <img src="./frontend/asset/img/transaction.webp" alt="ChapMoney">

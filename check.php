@@ -1,6 +1,22 @@
 <?php
   require('./backend/actions/sendToEmail.php');
   require('./backend/actions/checkAction.php');
+
+  // Rate
+  $civRussia = 0.092;
+  $russiaCIV = 9.8;
+
+  // Convert amount
+  $amountConvert = intval($amount);
+
+  if ($senderCountry == 'civ') {
+    $finalAmount = number_format($amountConvert * $civRussia, 2, ',', ' '). ' RUB';
+    $change = 'FCFA';
+  } else if ($senderCountry == 'russie') {
+    $finalAmount = number_format($amountConvert * $russiaCIV, 2, ',', ' '). ' FCFA';
+    $change = 'RUB';
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -119,7 +135,7 @@
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php 
                     if (isset($amount)) {
-                      echo number_format($amount, 2, ',', ' '). ' XOF';
+                      echo number_format($amount, 2, ',', ' '). ' '. $change;
                     }
                   ?>
                 </span>
@@ -144,13 +160,12 @@
             </div>
             <h4 class="fw-bold modal-title my-3">Votre bénéficiaire recvra: <br> 
               <span id="total">
-                <?php 
-                  if (isset($amount)) {
-                    echo number_format($amount, 2, ',', ' '). ' XOF';
-                  }
-                ?>
+              <?php 
+                echo $finalAmount;
+              ?>
               </span>
             </h4>
+            <span>Les frais Chapmoney s'élèvent à: </span>
             <div class="modal-footer justify-content-center">
               <button name="back" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
               <button name="send" class="btn btn-success">Valider</button>
@@ -166,6 +181,28 @@
     $(".send").click(function(event) {
       event.preventDefault();
     });
+
+    // ================== Rate ================== //
+
+    // Rate 
+    // const civRussia = 0.092;
+    // const russiaCIV = 9.8;
+
+    // // Show amout
+    // const total = document.getElementById('total');
+    // // Sender Country
+    // const senderCountry = '<?php echo $senderCountry ?>';
+    // // User amount
+    // const amount = parseInt('<?php echo $amount ?>');
+
+    // // Rate calculation
+    // if (senderCountry == 'civ') {
+    //   const finalAmout = new Intl.NumberFormat().format(amount * civRussia);
+    //   total.innerHTML = `${finalAmout} RUB`;
+    // } else if (senderCountry == 'russie') {
+    //   const finalAmout = new Intl.NumberFormat().format(amount * russiaCIV);
+    //   total.innerHTML = `${finalAmout} FCFA`;
+    // }
   </script>
   
 </body>

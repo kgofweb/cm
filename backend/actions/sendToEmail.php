@@ -34,5 +34,6 @@ if (isset($_POST['send'])) {
 
 // Return to home page
 if (isset($_POST['back'])) {
+  $_SESSION['error'] = 'Votre transaction a été annuler';
   header('Location: ./index.php');
 }

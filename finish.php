@@ -1,4 +1,12 @@
-<?php require('./backend/actions/finishAction.php'); ?>
+<?php require('./backend/actions/finishAction.php'); 
+
+  if ($senderCountry == 'civ') {
+    $change = 'FCFA';
+  } else {
+    $change = 'RUB';
+  }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +40,7 @@
                   d'une valeur de 
                   <span class="fw-bold">
                     <?php if (isset($amount)) {
-                      echo number_format($amount, 2, ',', ' '). ' XOF';
+                        echo number_format($amount, 2, ',', ' '). ' '. $change;
                       }
                     ?>
                   </span>
