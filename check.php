@@ -3,12 +3,12 @@
   require('./backend/actions/checkAction.php');
 
   // Afrique de l'ouest
-  $civRussia = 0.0917;
-  $russiaCIV = 10.90;
+  $civRussia = 0.090;
+  $russiaCIV = 9.8;
 
   // Afrique centrale
-  // $rateAC = 0.090;
-  // $rateRubAc = 10.95;
+  $rateAC = 0.089;
+  $rateRubAc = 10;
 
   // Only guinee
   $guinRus = 0.00689;
@@ -19,54 +19,68 @@
   // Convert amount
   $amountConvert = intval($amount);
 
+  // percentage
+  $percentageAfriqueOuest = 0.02;
+  $percentageAfriqueCentrale = 0.08;
+  $percentageEntreAfriqueCentrale = 0.05;
 
-  if (($senderCountry === 'civ' || $senderCountry === 'mali' || $senderCountry === 'senegal' || $senderCountry === 'cameroun' || $senderCountry === 'gabon' || $senderCountry === 'benin' || $senderCountry === 'congo') && $receiverCountry === 'russie') {
+
+  // ============= Afrique de l'ouest vers russie ============= //
+  if (($senderCountry === 'civ' || $senderCountry === 'mali' || $senderCountry === 'senegal' ||   $senderCountry === 'benin') && $receiverCountry === 'russie') {
     $finalAmount = number_format($amountConvert * $civRussia, 2, ',', ' '). ' RUB';
     $change = 'FCFA';
+
+    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' FCFA';
   } 
-  // CIV
-  else if ($senderCountry == 'civ' && ($receiverCountry == 'civ' || $receiverCountry == 'cameroun' || $receiverCountry == 'mali' || $receiverCountry == 'senegal' || $receiverCountry == 'congo' || $receiverCountry == 'benin' || $receiverCountry == 'gabon')) {
-    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
+  // ============= Afrique centrale vers russie ============= //
+  else if (($senderCountry === 'gabon' || $senderCountry === 'cameroun' || $senderCountry === 'congo') && $receiverCountry == 'russie') {
+    $finalAmount = number_format($amountConvert * $rateAC, 2, ',', ' '). ' RUB';
     $change = 'FCFA';
+
+    $percentage = number_format($amountConvert * $percentageAfriqueCentrale, 2, ',', ' '). ' FCFA';
   } 
-  // Mali
-  else if ($senderCountry == 'mali' && ($receiverCountry == 'mali' || $receiverCountry == 'cameroun' || $receiverCountry == 'civ' || $receiverCountry == 'senegal' || $receiverCountry == 'congo' || $receiverCountry == 'benin' || $receiverCountry == 'gabon')) {
-    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
-    $change = 'FCFA';
-  } 
-  // Cameroun
-  else if ($senderCountry == 'cameroun' && ($receiverCountry == 'cameroun' ||$receiverCountry == 'mali' || $receiverCountry == 'civ' || $receiverCountry == 'senegal' || $receiverCountry == 'congo' || $receiverCountry == 'benin' || $receiverCountry == 'gabon')) {
-    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
-    $change = 'FCFA';
-  } 
-  // Benin
-  else if ($senderCountry == 'benin' && ($receiverCountry == 'cameroun' ||$receiverCountry == 'mali' || $receiverCountry == 'civ' || $receiverCountry == 'senegal' || $receiverCountry == 'congo' || $receiverCountry == 'benin' || $receiverCountry == 'gabon')) {
-    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
-    $change = 'FCFA';
-  } 
-  // Congo
-  else if ($senderCountry == 'congo' && ($receiverCountry == 'cameroun' ||$receiverCountry == 'mali' || $receiverCountry == 'civ' || $receiverCountry == 'senegal' || $receiverCountry == 'congo' || $receiverCountry == 'benin' || $receiverCountry == 'gabon')) {
-    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
-    $change = 'FCFA';
-  } 
-  // Gabon
-  else if ($senderCountry == 'gabon' && ($receiverCountry == 'cameroun' ||$receiverCountry == 'mali' || $receiverCountry == 'civ' || $receiverCountry == 'senegal' || $receiverCountry == 'congo' || $receiverCountry == 'benin' || $receiverCountry == 'gabon')) {
-    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
-    $change = 'FCFA';
+  // Russie vers Afrique centrale
+  else if ($senderCountry === 'russie' && ($receiverCountry === 'gabon' || $receiverCountry === 'cameroun' || $receiverCountry === 'congo')) {
+    $finalAmount = number_format($amountConvert * $rateRubAc, 2, ',', ' '). ' FCFA';
+    $change = 'RUB';
+    $percentage = number_format($amountConvert * $percentageAfriqueCentrale, 2, ',', ' '). ' RUB';
   }
-  // Senegal
-  else if ($senderCountry == 'senegal' && ($receiverCountry == 'cameroun' ||$receiverCountry == 'mali' || $receiverCountry == 'civ' || $receiverCountry == 'senegal' || $receiverCountry == 'congo' || $receiverCountry == 'benin' || $receiverCountry == 'gabon')) {
+  
+  // ================= Entre Afrique de l'ouest 2% ================= //
+  else if (($senderCountry == 'civ' || $senderCountry == 'benin' || $senderCountry == 'senegal' || $senderCountry == 'mali') && ($receiverCountry == 'civ' || $receiverCountry == 'mali' || $receiverCountry == 'senegal' || $receiverCountry == 'benin')) {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
     $change = 'FCFA';
+    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' FCFA';
+  } 
+  // ================= Entre Afrique de centrale 5% ================= //
+  else if (($senderCountry == 'cameroun' || $senderCountry == 'gabon' || $senderCountry == 'congo') && ($receiverCountry == 'cameroun' || $receiverCountry == 'gabon' || $receiverCountry == 'congo')) {
+    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
+    $change = 'FCFA';
+    $percentage = number_format($amountConvert * $percentageEntreAfriqueCentrale, 2, ',', ' '). ' FCFA';
   }
-  // Russia
+  // ================ Afrique de l'ouest vers Afrique centrale 5% ================ //
+  else if (($senderCountry == 'civ' || $senderCountry == 'mali' || $senderCountry == 'senegal' || $senderCountry == 'benin') && ($receiverCountry == 'cameroun' || $receiverCountry == 'gabon' || $receiverCountry == 'congo')) {
+    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
+    $change = 'FCFA';
+    $percentage = number_format($amountConvert * $percentageEntreAfriqueCentrale, 2, ',', ' '). ' FCFA';
+  }
+  // ================= Afrique centrale vers Afrique Ouest 8% ================= //
+  else if (($senderCountry == 'cameroun' || $senderCountry == 'congo' || $senderCountry == 'gabon') && ($receiverCountry == 'civ' || $receiverCountry == 'mali' || $receiverCountry == 'benin' || $receiverCountry == 'senegal')) {
+    $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
+    $change = 'FCFA';
+    $percentage = number_format($amountConvert * $percentageAfriqueCentrale, 2, ',', ' '). ' FCFA';
+  }
+  // Entre Russie
   else if ($senderCountry == 'russie' && $receiverCountry == 'russie') {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' RUB';
     $change = 'RUB';
+    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' RUB';
   }
+  // Russie vers afrique de l'ouest
   else {
     $finalAmount = number_format($amountConvert * $russiaCIV, 2, ',', ' '). ' FCFA';
     $change = 'RUB';
+    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' RUB';
   }
 
 
@@ -235,24 +249,15 @@
             <div class="mt-4">
               <span class="material-symbols-outlined fw-bold" style="color: #2ed573; font-size: 4rem;">task_alt</span>
             </div>
-            <h4 class="fw-bold modal-title my-3">Votre bénéficiaire recvra: <br> 
+            <h4 class="fw-bold modal-title my-3">Votre bénéficiaire recvra: 
+              <br> 
               <span id="total">
               <?php 
                 echo $finalAmount;
               ?>
               </span>
             </h4>
-            <!-- <div class="d-flex align-items-center justify-content-center mb-3">
-              <div class="form-check form-check-inline d-flex align-items-center">
-                <input  class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Payer les frais</label>
-              </div>
-              <div class="form-check form-check-inline d-flex align-items-center">
-                <input  class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">Ne pas payer les frais</label>
-              </div>
-            </div> -->
-            <span>Les frais Chapmoney s'élèvent à: </span>
+            <span>Les frais Chapmoney s'élèvent à: <b><?= $percentage ?></b> </span>
             <div class="modal-footer justify-content-center">
               <button name="back" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
               <button name="send" class="btn btn-success">Valider</button>
@@ -268,12 +273,6 @@
     $(".send").click(function(event) {
       event.preventDefault();
     });
-
-    // window.onload = (event) => {
-    //   let myToast = document.querySelector('.toast')
-    //   let alertToast = new bootstrap.Toast(myToast)
-    //   alertToast.show()
-    // }
   </script>
   
 </body>
