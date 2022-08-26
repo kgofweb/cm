@@ -23,6 +23,8 @@ $senderPhone = $_SESSION['numberPhoneOne'];
 $receiverPhone = $_SESSION['numberPhoneTwo'];
 $amount = $_SESSION['amount'];
 
+$percentage = $_SESSION['percentage'];
+
 // Typeof in php
 // echo gettype($amount);
 

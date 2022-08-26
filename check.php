@@ -23,76 +23,85 @@
   $percentageAfriqueOuest = 0.02;
   $percentageAfriqueCentrale = 0.08;
   $percentageEntreAfriqueCentrale = 0.05;
-
+  $percentage;
 
   // ============= Afrique de l'ouest vers russie ============= //
   if (($senderCountry === 'civ' || $senderCountry === 'mali' || $senderCountry === 'senegal' ||   $senderCountry === 'benin') && $receiverCountry === 'russie') {
     $finalAmount = number_format($amountConvert * $civRussia, 2, ',', ' '). ' RUB';
     $change = 'FCFA';
 
-    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' FCFA';
+    $percentage = $amountConvert * $percentageAfriqueOuest;
   } 
   // ============= Afrique centrale vers russie ============= //
   else if (($senderCountry === 'gabon' || $senderCountry === 'cameroun' || $senderCountry === 'congo') && $receiverCountry == 'russie') {
     $finalAmount = number_format($amountConvert * $rateAC, 2, ',', ' '). ' RUB';
     $change = 'FCFA';
 
-    $percentage = number_format($amountConvert * $percentageAfriqueCentrale, 2, ',', ' '). ' FCFA';
+    $percentage = $amountConvert * $percentageAfriqueCentrale;
   } 
   // Russie vers Afrique centrale
   else if ($senderCountry === 'russie' && ($receiverCountry === 'gabon' || $receiverCountry === 'cameroun' || $receiverCountry === 'congo')) {
     $finalAmount = number_format($amountConvert * $rateRubAc, 2, ',', ' '). ' FCFA';
     $change = 'RUB';
-    $percentage = number_format($amountConvert * $percentageAfriqueCentrale, 2, ',', ' '). ' RUB';
+
+    $percentage = $amountConvert * $percentageAfriqueCentrale;
   }
   
   // ================= Entre Afrique de l'ouest 2% ================= //
   else if (($senderCountry == 'civ' || $senderCountry == 'benin' || $senderCountry == 'senegal' || $senderCountry == 'mali') && ($receiverCountry == 'civ' || $receiverCountry == 'mali' || $receiverCountry == 'senegal' || $receiverCountry == 'benin')) {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
     $change = 'FCFA';
-    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' FCFA';
+
+    $percentage = $amountConvert * $percentageAfriqueOuest;
   } 
   // ================= Entre Afrique de centrale 5% ================= //
   else if (($senderCountry == 'cameroun' || $senderCountry == 'gabon' || $senderCountry == 'congo') && ($receiverCountry == 'cameroun' || $receiverCountry == 'gabon' || $receiverCountry == 'congo')) {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
     $change = 'FCFA';
-    $percentage = number_format($amountConvert * $percentageEntreAfriqueCentrale, 2, ',', ' '). ' FCFA';
+
+    $percentage = $amountConvert * $percentageEntreAfriqueCentrale;
   }
   // ================ Afrique de l'ouest vers Afrique centrale 5% ================ //
   else if (($senderCountry == 'civ' || $senderCountry == 'mali' || $senderCountry == 'senegal' || $senderCountry == 'benin') && ($receiverCountry == 'cameroun' || $receiverCountry == 'gabon' || $receiverCountry == 'congo')) {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
     $change = 'FCFA';
-    $percentage = number_format($amountConvert * $percentageEntreAfriqueCentrale, 2, ',', ' '). ' FCFA';
+
+    $percentage = $amountConvert * $percentageEntreAfriqueCentrale;
   }
   // ================= Afrique centrale vers Afrique Ouest 8% ================= //
   else if (($senderCountry == 'cameroun' || $senderCountry == 'congo' || $senderCountry == 'gabon') && ($receiverCountry == 'civ' || $receiverCountry == 'mali' || $receiverCountry == 'benin' || $receiverCountry == 'senegal')) {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
     $change = 'FCFA';
-    $percentage = number_format($amountConvert * $percentageAfriqueCentrale, 2, ',', ' '). ' FCFA';
+
+    $percentage = $amountConvert * $percentageAfriqueCentrale;
   }
   // Entre Russie
   else if ($senderCountry == 'russie' && $receiverCountry == 'russie') {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' RUB';
     $change = 'RUB';
-    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' RUB';
+
+    $percentage = $amountConvert * $percentageAfriqueOuest;
   }
   // Russie vers afrique de l'ouest
   else {
     $finalAmount = number_format($amountConvert * $russiaCIV, 2, ',', ' '). ' FCFA';
     $change = 'RUB';
-    $percentage = number_format($amountConvert * $percentageAfriqueOuest, 2, ',', ' '). ' RUB';
+    $percentage = ($amountConvert * $percentageAfriqueOuest);
   }
 
 
   // ========== Only Guinee ========== //
   if ($senderCountry === 'guinee' && $receiverCountry === 'russie') {
-  $finalAmount = number_format($amountConvert * $guinRus, 2, ',', ' '). ' RUB';
-  $change = 'FCFA';
+    $finalAmount = number_format($amountConvert * $guinRus, 2, ',', ' '). ' RUB';
+    $change = 'FCFA';
   } 
   else if ($senderCountry === 'russie' && $receiverCountry === 'guinee') {
     $finalAmount = number_format($amountConvert * $rusGuin, 2, ',', ' '). ' FCFA';
     $change = 'RUB';
   }
+
+  // Save amount 
+  $_SESSION['percentage'] = $percentage;
 ?>
 
 <!DOCTYPE html>
@@ -106,21 +115,6 @@
       <i class="fa-solid fa-angle-left"></i>
       Retour
     </a>
-
-    <?php if (isset($_SESSION['error'])) {
-      ?>
-        <div class="toast align-items-center text-white bg-danger border-0 mt-4" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 1000;">
-          <div class="d-flex">
-            <div class="toast-body">
-              <?php echo $_SESSION['error']; ?>
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-        </div>
-      <?php
-        unset($_SESSION['error']);
-      } 
-    ?>
 
     <div>
       <div class="card mb-4">
@@ -190,18 +184,6 @@
                   ?>
                 </span>
               </div>
-              <!-- <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">send</span>
-                </span>
-                <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
-                  <?php 
-                    if (isset($receiverMode)) {
-                      echo $receiverMode;
-                    }
-                  ?>
-                </span>
-              </div> -->
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="fw-bold d-flex align-items-center">
                   <span class="material-icons" style="font-size: 1.5rem;">smartphone</span>
@@ -234,7 +216,7 @@
             </div>
 
             <div class="float-right">
-              <button class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Valider</button>
+              <button class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Continuer</button>
             </div>
           </div>
         </div>
