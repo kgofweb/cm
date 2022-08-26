@@ -1,9 +1,26 @@
 <?php require('./backend/actions/finishAction.php'); 
 
-  if ($senderCountry == 'civ') {
-    $change = 'FCFA';
-  } else {
-    $change = 'RUB';
+  // if ($senderCountry == 'civ') {
+  //   $change = 'FCFA';
+  // } else if ($senderCountry == 'russie') {
+  //   $change = 'RUB';
+  // } else if ($senderCountry == 'civ') {
+  //   # code...
+  // }
+
+  switch ($senderCountry) {
+    case 'civ':
+      $change = 'FCFA';
+      break;
+    case 'russie':
+      $change = 'RUB';
+      break;
+    case 'senegal':
+      $change = 'FCFA';
+      break;
+    case 'guinee':
+      $change = 'FCFA';
+      break;
   }
 
 ?>

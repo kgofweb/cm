@@ -11,7 +11,6 @@
       <i class="fa-solid fa-angle-left"></i>
       Retour
     </a>
-
     <!-- Nav Tabs -->
     <ul class="nav nav-pills my-5 justify-content-center" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -58,13 +57,14 @@
                   <option value="">--Selectionner votre Pays--</option>
                   <option data-mask="+7 (999) 999 99-99" value="russie">Russie</option>
                   <option data-mask="(+229) 99 99 99 99" value="benin">Bénin</option>
-                  <option data-mask="(+242) 99 999 99 99" value="congo">Congo Brazaville</option>
+                  <option data-mask="(+237) 99 99 99 99" value="cameroun">Cameroun</option>
                   <option data-mask="(+225) 99 99 99 99 99" value="civ">Côte d'Ivoire</option>
+                  <option data-mask="(+242) 99 999 99 99" value="congo">Congo Brazaville</option>
                   <option data-mask="(+241) 9 99 99 99 99" value="gabon">Gabon</option>
                   <option data-mask="(+224) 999 99 99 99" value="guinee">Guinée</option>
                   <option data-mask="(+223) 99 99 99 99" value="mali">Mali</option>
-                  <option data-mask="(+227) 99 99 99 99" value="niger">Niger</option>
                   <option data-mask="(+221) 99 999 99 99" value="senegal">Sénégal</option>
+                  <!-- <option data-mask="(+227) 99 99 99 99" value="niger">Niger</option> -->
                 </select>
               </div>
               <!-- Mode d'envoi -->
@@ -112,17 +112,18 @@
                   <option>--Selectionner votre Pays--</option>
                   <option data-mask="+7 (999) 999 99-99" value="russie">Russie</option>
                   <option data-mask="(+229) 99 99 99 99" value="benin">Bénin</option>
-                  <option data-mask="(+242) 99 999 99 99" value="congo">Congo Brazaville</option>
+                  <option data-mask="(+237) 99 99 99 99" value="cameroun">Cameroun</option>
                   <option data-mask="(+225) 99 99 99 99 99" value="civ">Côte d'Ivoire</option>
+                  <option data-mask="(+242) 99 999 99 99" value="congo">Congo Brazaville</option>
                   <option data-mask="(+241) 9 99 99 99 99" value="gabon">Gabon</option>
                   <option data-mask="(+224) 999 99 99 99" value="guinee">Guinée</option>
                   <option data-mask="(+223) 99 99 99 99" value="mali">Mali</option>
-                  <option data-mask="(+227) 99 99 99 99" value="niger">Niger</option>
                   <option data-mask="(+221) 99 999 99 99" value="senegal">Sénégal</option>
+                  <!-- <option data-mask="(+227) 99 99 99 99" value="niger">Niger</option> -->
                 </select>
               </div>
               <!-- Mode de reception -->
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <span class="fw-bold d-flex align-items-center">
                   <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">send</span>
                   Mode d'envoi
@@ -130,7 +131,7 @@
                 <select class="form-select" name="receiveMode" id="modeReceive">
                   <option>Choisir obligatoirement un pays</option>
                 </select>
-              </div>
+              </div> -->
               <!-- Tel Number -->
               <div class="mb-3">
                 <span class="fw-bold d-flex align-items-center">
@@ -173,18 +174,20 @@
     </form>
   </div>
 
+  <!-- ================== JavaScript ================== -->
   <script>
     
     const modeTransfert = {
       russie: ['SberBank', 'Tinkoff', 'VTB', 'Autre'],
       civ: ['Orange Money', 'Moov Money', 'Wave Money', 'MTN Mobile Money'],
-      benin: ['Moov Money', 'MTN Mobile Money'],
       senegal: ['Orange Money', 'Wave Money'],
-      gabon: ['MTN Mobile Money', 'AIRTEL Mobile Money'],
       guinee: ['Orange Money', 'MTN  areeba'],
       mali: ['Orange Money'],
-      niger: ['Moov Flooz'],
-      congo: ['AIRTEL Mobile Money', 'MTN Mobile Money']
+      congo: ['AIRTEL Mobile Money', 'MTN Mobile Money'],
+      benin: ['Moov Money', 'MTN Mobile Money'],
+      cameroun: ['Orange Money'],
+      gabon: ['MTN Mobile Money', 'AIRTEL Mobile Money'],
+      // niger: ['Moov Flooz'],
     }
 
   // DOM
@@ -224,26 +227,25 @@
 
     function chooseModeReceive() {
       // Select Value
-      let selectOption = modeTransfert[this.value]
+      // let selectOption = modeTransfert[this.value]
 
-      // Remove old selection
-      while (modeReceive.options.length > 0) {
-        modeReceive.options.remove(0)
-      }
+      // // Remove old selection
+      // while (modeReceive.options.length > 0) {
+      //   modeReceive.options.remove(0)
+      // }
 
-      // From transfert mode table
-      Array.from(selectOption).forEach(function (el) {
-        let option = new Option(el, el)
-        // Append child
-        modeReceive.appendChild(option)
-      })
+      // // From transfert mode table
+      // Array.from(selectOption).forEach(function (el) {
+      //   let option = new Option(el, el)
+      //   // Append child
+      //   modeReceive.appendChild(option)
+      // })
       
       // Phone Number Mask
       $(".numberTel__two").inputmask($('#country__two').find(':selected').data('mask'));
     }
 
     // countryOne.options[countryOne.selectedIndex].value == ''
-
   </script>
 
 </body>

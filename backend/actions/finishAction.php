@@ -18,7 +18,7 @@ require 'phpmailer/src/SMTP.php';
 $senderCountry = $_SESSION['countryOne'];
 $receiverCountry = $_SESSION['countryTwo'];
 $senderMode = $_SESSION['sendMode'];
-$receiverMode = $_SESSION['receiveMode'];
+// $receiverMode = $_SESSION['receiveMode'];
 $senderPhone = $_SESSION['numberPhoneOne'];
 $receiverPhone = $_SESSION['numberPhoneTwo'];
 $amount = $_SESSION['amount'];
@@ -36,7 +36,7 @@ if (isset($_POST['send'])) {
   // My Gmail
   $mail->Username = 'mervydevmedia@gmail.com'; 
   //  Gmail App password
-  $mail->Password = 'iviaogmxshpqlqud';
+  $mail->Password = 'uitkydmqosfdfxob';
   $mail->SMTPSecure = 'ssl';
   $mail->Port = 465;
   $mail->Subject = 'ChapMoney Transaction';
@@ -50,7 +50,6 @@ if (isset($_POST['send'])) {
           <span style='font-size: 1rem;'>N° Téléphone: <b>$senderPhone</b> </span> <br>
           <hr>
           <span style='font-size: 1rem;'>Pays Récepteur: <b>$receiverCountry</b> </span> <br>
-          <span style='font-size: 1rem;'>Mode Envoi: <b>$receiverMode</b> </span> <br>
           <span style='font-size: 1rem;'>N° Téléphone: <b>$receiverPhone</b> </span> <br>
           <hr>
           <span style='font-size: 1rem; margin-bottom: 2rem;'>Amount: <b>$amount XOF</b> </span> <br>
