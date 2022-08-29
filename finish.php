@@ -93,7 +93,7 @@
                 Votre code de retrait est: <span style="text-decoration: underline;" class="fs-5 fw-bold text-primary"><?= $verify_code; ?></span>
                 <br>
                 <br>
-                Une foi le dépôt effectué, cliquer sur <b>dépôt effectuer</b> pour terminer. <br> Vous recevrez votre argent dans un delai de <b>10 minutes</b>. <br>
+                Une foi le dépôt effectué, cliquer sur <b>dépôt effectuer</b> pour terminer. <br> Vous recevrez votre argent dans un delai de <b>20 minutes</b>. <br>
                 Dans le cas contraire, <span class="text-danger fw-bold">l'opération ne sera pas pris en compte.</span>
                 <br>
                 <br>
