@@ -29,12 +29,6 @@
       break;
   }
 
-  $verify_code = $_SESSION['verify_code'];
-
-  // if (isset($verify_code)) {
-  //   echo $verify_code;
-  // }
-
 ?>
 
 <!DOCTYPE html>
@@ -44,12 +38,12 @@
 <body>
   <div class="container">
     <!-- Back -->
-    <!-- <div class="mt-4">
+    <div class="mt-4">
       <a href="./check.php" class="navbar-brand text-white">
         <i class="fa-solid fa-angle-left"></i>
         Retour
       </a>
-    </div> -->
+    </div>
 
     <div class="card mb-4">
       <div class="card-body text-center">
@@ -93,7 +87,7 @@
                 Votre code de retrait est: <span style="text-decoration: underline;" class="fs-5 fw-bold text-primary"><?= $verify_code; ?></span>
                 <br>
                 <br>
-                Une foi le dépôt effectué, cliquer sur <b>dépôt effectuer</b> pour terminer. <br> Vous recevrez votre argent dans un delai de <b>20 minutes</b>. <br>
+                Une foi le dépôt effectué, cliquer sur <b>dépôt effectuer</b> pour terminer. <br> Vous recevrez votre argent dans un delai de <b>10 minutes</b>. <br>
                 Dans le cas contraire, <span class="text-danger fw-bold">l'opération ne sera pas pris en compte.</span>
                 <br>
                 <br>
