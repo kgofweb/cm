@@ -15,6 +15,11 @@ $amount = $_SESSION['amount'];
 
 // Send Email
 if (isset($_POST['send'])) {
+  // Generate random code
+  $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+  // Save it in session
+  $_SESSION['verify_code'] = $verification_code;
+
   header('Location: ./finish.php');
 }
 

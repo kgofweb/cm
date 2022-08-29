@@ -25,9 +25,6 @@ $amount = $_SESSION['amount'];
 
 $percentage = $_SESSION['percentage'];
 
-// Typeof in php
-// echo gettype($amount);
-
 if (isset($_POST['send'])) {
   // Send to email
   $mail = new PHPMailer(true);
@@ -42,6 +39,9 @@ if (isset($_POST['send'])) {
   $mail->SMTPSecure = 'ssl';
   $mail->Port = 465;
   $mail->Subject = 'ChapMoney Transaction';
+
+  $verification_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+
   $mail->Body = "
     <table style='background-color: #eef6f8; width: 85%; margin: auto; border-radius: .5rem;'>
       <tr>
@@ -55,6 +55,7 @@ if (isset($_POST['send'])) {
           <span style='font-size: 1rem;'>N° Téléphone: <b>$receiverPhone</b> </span> <br>
           <hr>
           <span style='font-size: 1rem; margin-bottom: 2rem;'>Amount: <b>$amount XOF</b> </span> <br>
+          <span style='font-size: 1.5rem; margin-bottom: 2rem;'>Your verification code is: <b>$verification_code</b> </span> <br>
           <p style='font-size: .7rem; text-align: center;'> Chapmoney &copy; 2022 </p>
         </td>
       </tr>

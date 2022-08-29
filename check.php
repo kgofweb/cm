@@ -2,6 +2,38 @@
   require('./backend/actions/sendToEmail.php');
   require('./backend/actions/checkAction.php');
 
+  
+
+  switch ($senderCountry) {
+    case 'civ':
+      $change = 'FCFA';
+      break;
+    case 'mali':
+      $change = 'FCFA';
+      break;
+    case 'senegal':
+      $change = 'FCFA';
+      break;
+    case 'benin':
+      $change = 'FCFA';
+      break;
+    case 'cameroun':
+      $change = 'FCFA';
+      break;
+    case 'cameroun':
+      $change = 'FCFA';
+      break;
+    case 'congo':
+      $change = 'FCFA';
+      break;
+    case 'gabon':
+      $change = 'FCFA';
+      break;
+    case 'russie':
+      $change = 'RUB';
+      break;
+  }
+
   // Afrique de l'ouest
   $civRussia = 0.090;
   $russiaCIV = 9.8;
@@ -206,11 +238,13 @@
                   <span class="material-icons" style="font-size: 1.5rem;">paid</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
-                  <?php 
-                    if (isset($amount)) {
-                      echo number_format($amount, 2, ',', ' '). ' '. $change;
-                    }
-                  ?>
+                  <b>
+                    <?php 
+                      if (isset($amount)) {
+                        echo number_format($amount, 2, ',', ' '). ' '. $change;
+                      }
+                    ?>
+                  </b>
                 </span>
               </div>
             </div>
@@ -239,7 +273,8 @@
               ?>
               </span>
             </h4>
-            <span>Les frais Chapmoney s'élèvent à: <b><?= $percentage ?></b> </span>
+            <span>Les frais de transaction s'élèvent à: <b><?= $percentage. ' '. $change ?></b> </span>
+            <span class="fs-6 text-primary">(Assurez vous d'avoir bien vérifié les infos entrées car il n'y aura plus de retour en arrière).</span>
             <div class="modal-footer justify-content-center">
               <button name="back" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
               <button name="send" class="btn btn-success">Valider</button>
