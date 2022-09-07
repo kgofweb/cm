@@ -19,7 +19,7 @@
           </div>
         <?php
         unset($_SESSION['success']);
-        session_destroy();
+        // session_destroy();
       } else if (isset($_SESSION['error'])) {
         ?>
           <div class="toast align-items-center text-white bg-danger border-0 mt-4" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 1000;">
@@ -32,6 +32,19 @@
           </div>
         <?php
         unset($_SESSION['success']);
+        session_destroy();
+      } else if (isset($_SESSION['validate'])) {
+        ?>
+          <div class="toast align-items-center text-white bg-success border-0 mt-4" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 1000;">
+            <div class="d-flex">
+              <div class="toast-body">
+                <?php echo $_SESSION['validate']; ?>
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        <?php
+        unset($_SESSION['validate']);
         session_destroy();
       }
     ?>

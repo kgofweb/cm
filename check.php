@@ -2,8 +2,6 @@
   require('./backend/actions/sendToEmail.php');
   require('./backend/actions/checkAction.php');
 
-  
-
   switch ($senderCountry) {
     case 'civ':
       $change = 'FCFA';
@@ -56,6 +54,7 @@
   $percentageAfriqueCentrale = 0.08;
   $percentageEntreAfriqueCentrale = 0.05;
   $percentage;
+  $finalAmount;
 
   // ============= Afrique de l'ouest vers russie ============= //
   if (($senderCountry === 'civ' || $senderCountry === 'mali' || $senderCountry === 'senegal' ||   $senderCountry === 'benin') && $receiverCountry === 'russie') {
@@ -93,7 +92,7 @@
 
     $percentage = $amountConvert * $percentageEntreAfriqueCentrale;
   }
-  // ================ Afrique de l'ouest vers Afrique centrale 5% ================ //
+  // ================ Afrique de l'ouest vers Afrique centrale 5% ============= //
   else if (($senderCountry == 'civ' || $senderCountry == 'mali' || $senderCountry == 'senegal' || $senderCountry == 'benin') && ($receiverCountry == 'cameroun' || $receiverCountry == 'gabon' || $receiverCountry == 'congo')) {
     $finalAmount = number_format($amountConvert * $rate, 2, ',', ' '). ' FCFA';
     $change = 'FCFA';
@@ -134,6 +133,7 @@
 
   // Save amount 
   $_SESSION['percentage'] = $percentage;
+  $_SESSION['finalAmount'] = $finalAmount;
 ?>
 
 <!DOCTYPE html>
@@ -143,13 +143,13 @@
 <body>
   <div class="container">
     <!-- Back -->
-    <a href="./send.php" class="navbar-brand text-white mt-4">
+    <a href="./send.php" class="navbar-brand text-white mt-3">
       <i class="fa-solid fa-angle-left"></i>
       Retour
     </a>
 
     <div>
-      <div class="card mb-4">
+      <div class="card mb-4 bg-white">
         <div class="card-body text-center">
           <div class="container">
             <div class="card-title">
@@ -189,7 +189,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">smartphone</span>
+                  <span class="material-icons" style="font-size: 1.5rem;">call</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php
@@ -200,41 +200,44 @@
                 </span>
               </div>
             </div>
-            <h6 class="fw-bold text-start mb-4">
-              Récepteur
-            </h6>
-            <div class="receiver mb-4">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">public</span>
-                </span>
-                <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
-                  <?php 
-                    if (isset($receiverCountry)) {
-                      echo $receiverCountry;
-                    }
-                  ?>
-                </span>
-              </div>
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">smartphone</span>
-                </span>
-                <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
-                  <?php 
-                    if (isset($receiverPhone)) {
-                      echo $receiverPhone;
-                    }
-                  ?>
-                </span>
+            <div>
+              <h6 class="fw-bold text-start mb-4">
+                Récepteur
+              </h6>
+              <div class="receiver mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <span class="fw-bold d-flex align-items-center">
+                    <span class="material-icons" style="font-size: 1.5rem;">public</span>
+                  </span>
+                  <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
+                    <?php 
+                      if (isset($receiverCountry)) {
+                        echo $receiverCountry;
+                      }
+                    ?>
+                  </span>
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <span class="fw-bold d-flex align-items-center">
+                    <span class="material-icons" style="font-size: 1.5rem;">call</span>
+                  </span>
+                  <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
+                    <?php 
+                      if (isset($receiverPhone)) {
+                        echo $receiverPhone;
+                      }
+                    ?>
+                  </span>
+                </div>
               </div>
             </div>
             <h6 class="fw-bold text-start mb-3">
-              Montant à expédier
+              Montant à expédier <br>
+              <span style="font-size: .8rem" class="text-primary fw-bold">(Ce montant est la somme que vous voulez faire parvenir à votre bénéficiaire.)</span>
             </h6>
             <div class="amount mb-4">
-              <div class="d-flex align-items-center justify-content-between">
-                <span class="fw-bold d-flex align-items-center">
+              <div class="d-flex align-items-center justify-content-between;">
+                <span class="fw-bold d-flex align-items-center;">
                   <span class="material-icons" style="font-size: 1.5rem;">paid</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">

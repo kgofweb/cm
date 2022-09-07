@@ -1,4 +1,6 @@
-<?php require('./backend/actions/finishAction.php'); 
+<?php 
+  require('./backend/actions/finishAction.php'); 
+  
   switch ($senderCountry) {
     case 'civ':
       $change = 'FCFA';
@@ -29,6 +31,9 @@
       break;
   }
 
+  // Agent Infos
+  $agnentNumber = $_SESSION['agnentNumber'];
+  $name = $_SESSION['name'];
 ?>
 
 <!DOCTYPE html>
@@ -50,22 +55,21 @@
         <div class="container">
           <form method="post">
             <div class="d-flex align-items-center justify-content-center mt-0">
-              <div>
-                <span style="color: #2ed573; font-size: 3rem;" class="material-symbols-outlined fw-bold">
-                  task_alt
-                </span>
-              </div>
+              <span class="material-icons" style="color: #2ed573; font-size: 3.5rem;">
+                task_alt
+              </span>
+              <h2>Finalisation</h2>
             </div>
             <hr>
             <div class="message">
               <p>
-                Vueiller effectuer un transfert 
+                Vueiller effectuer un dépôt sur:
                 <span class="fw-bold">
                   <?php if (isset($senderMode)) {
                     echo $senderMode;
                   } ?>
                 </span> 
-                d'une valeur de 
+                d'une valeure de 
                 <span class="fw-bold">
                   <?php 
                     if (isset($percentage) && isset($amount)) {
@@ -73,22 +77,22 @@
                     }
                   ?>
                 </span>
-                depuis votre compte
+                <!-- depuis votre compte
                 <span class="fw-bold">
                   <?php if (isset($senderPhone)) {
                     echo $senderPhone;
                   } ?>
-                </span> 
+                </span>  -->
                 vers le numéro suivant:
                 <span class="fw-bold" id="numberOne">
-                  +7 (000) 999 85 52
+                  <?= $agnentNumber ?>
                 </span> <br>
-                Nom de l'agent: <b>Madiba</b> <br>
-                Votre code de retrait est: <span style="text-decoration: underline;" class="fs-5 fw-bold text-primary"><?= $verify_code; ?></span>
+                Nom du titulaire du compte: <b> <?= $name ?> </b> <br> <br>
+                Le code de retrait est: <span class="fs-5 fw-bold text-primary"><?= $verify_code; ?></span>
                 <br>
                 <br>
-                Une foi le dépôt effectué, cliquer sur <b>dépôt effectuer</b> pour terminer. <br> Vous recevrez votre argent dans un delai de <b>10 minutes</b>. <br>
-                Dans le cas contraire, <span class="text-danger fw-bold">l'opération ne sera pas pris en compte.</span>
+                Une foi le dépôt effectué, cliquer sur <b>dépôt effectuer</b>. <br> Vous bénéficier d'un délais de <b>20 minutes</b> pour éffectuer le dépôt. <br><br>
+                Passé ce délais, <span class="text-danger fw-bold">l'opération ne sera pas pris en compte.</span> et vous devriez reprendre la procedure pour obtenir un nouveau code de retrait.
                 <br>
                 <br>
               </p>
@@ -96,9 +100,9 @@
                 <button name="send" class="btn btn-success btn-sm mb-3 mx-0" style="background-color: #2ed573; border: none;">
                   Dépôt effectuer
                 </button>
-                <button name="new" class="btn btn-primary btn-sm mb-3 " style="border: none;">
+                <!-- <button name="new" class="btn btn-primary btn-sm mb-3 " style="border: none;">
                   Demander un nouveau numéro
-                </button>
+                </button> -->
                 <button name="back" class="btn btn-danger btn-sm mb-3" style="border: none;">
                   Annuler
                 </button>
