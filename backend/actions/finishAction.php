@@ -118,8 +118,8 @@ if (isset($_POST['send'])) {
             <span style='font-size: 1rem;'>Montant à transférer: <b style='color: #20bf6b;'>$finalAmount</b> </span>
             <br>
             <br>
-            <span style='font-size: 1rem;'>Nom du titulaire du compte: <b style='color: #0fb9b1;'>$name</b> </span> <br>
-            <span style='font-size: 1rem;'>Son N° de téléphone: <b style='color: #0fb9b1;'>$agnentNumber</b> </span>
+            <span style='font-size: 1rem; color: #fff;'>Nom du titulaire du compte: <b style='color: #0fb9b1;'>$name</b> </span> <br>
+            <span style='font-size: 1rem; color: #fff;'>Son N° de téléphone: <b style='color: #0fb9b1;'>$agnentNumber</b> </span>
             <br>
             <br>
             <span style='font-size: 1rem;'>Code de vérification recut par le client: <b style='color: #f7b731;'>$verify_code</b></span>
