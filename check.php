@@ -177,7 +177,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">send</span>
+                  <span class="material-icons" style="font-size: 1.5rem;">account_balance</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php 
@@ -232,8 +232,7 @@
               </div>
             </div>
             <h6 class="fw-bold text-start mb-3">
-              Montant à expédier <br>
-              <span style="font-size: .8rem" class="text-primary fw-bold">(Ce montant est la somme que vous voulez faire parvenir à votre bénéficiaire.)</span>
+              Montant à expédier
             </h6>
             <div class="amount mb-4">
               <div class="d-flex align-items-center justify-content-between;">
@@ -266,7 +265,9 @@
         <div class="modal-dialog">
           <div class="modal-content text-center">
             <div class="mt-4">
-              <span class="material-symbols-outlined fw-bold" style="color: #2ed573; font-size: 4rem;">task_alt</span>
+              <span class="material-icons" style="color: #2ed573; font-size: 4rem;">
+                task_alt
+              </span>
             </div>
             <h4 class="fw-bold modal-title my-3">Votre bénéficiaire recvra: 
               <br> 
@@ -277,7 +278,7 @@
               </span>
             </h4>
             <span>Les frais de transaction s'élèvent à: <b><?= $percentage. ' '. $change ?></b> </span>
-            <span class="fs-6 text-primary">(Assurez vous d'avoir bien vérifié les infos entrées car il n'y aura plus de retour en arrière).</span>
+            <span style="font-size: .9rem" class="text-primary fw-bold py-2">(Assurez vous d'avoir bien vérifié les infos entrées car il n'y aura plus de retour en arrière)</span>
             <div class="modal-footer justify-content-center">
               <button name="back" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
               <button name="send" class="btn btn-success">Valider</button>

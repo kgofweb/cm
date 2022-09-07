@@ -43,12 +43,12 @@
 <body>
   <div class="container">
     <!-- Back -->
-    <div class="mt-4">
+    <!-- <div class="mt-4">
       <a href="./check.php" class="navbar-brand text-white">
         <i class="fa-solid fa-angle-left"></i>
         Retour
       </a>
-    </div>
+    </div> -->
 
     <div class="card mb-4">
       <div class="card-body text-center">
@@ -68,42 +68,42 @@
                   <?php if (isset($senderMode)) {
                     echo $senderMode;
                   } ?>
-                </span> 
-                d'une valeure de 
-                <span class="fw-bold">
+                </span>: <span class="fw-bold" id="numberOne">
+                  <?= $agnentNumber ?>
+                </span>
+                <br>
+                Nom du titulaire du compte: <b> <?= $name ?> </b>
+                <br>
+                Montant: <span class="fw-bold">
                   <?php 
                     if (isset($percentage) && isset($amount)) {
                       echo number_format($percentage + $amount, 2, ',', ' '). ' '. $change;
                     }
                   ?>
                 </span>
+                <br>
+                <br>
+                Votre code de retrait est: <span class="fs-5 fw-bold text-primary"><?= $verify_code; ?></span>
+                <br>
                 <!-- depuis votre compte
                 <span class="fw-bold">
                   <?php if (isset($senderPhone)) {
                     echo $senderPhone;
                   } ?>
                 </span>  -->
-                vers le numéro suivant:
-                <span class="fw-bold" id="numberOne">
-                  <?= $agnentNumber ?>
-                </span> <br>
-                Nom du titulaire du compte: <b> <?= $name ?> </b> <br> <br>
-                Le code de retrait est: <span class="fs-5 fw-bold text-primary"><?= $verify_code; ?></span>
+
                 <br>
-                <br>
-                Une foi le dépôt effectué, cliquer sur <b>dépôt effectuer</b>. <br> Vous bénéficier d'un délais de <b>20 minutes</b> pour éffectuer le dépôt. <br><br>
-                Passé ce délais, <span class="text-danger fw-bold">l'opération ne sera pas pris en compte.</span> et vous devriez reprendre la procedure pour obtenir un nouveau code de retrait.
-                <br>
-                <br>
+                Ensuite cliquez sur <b>dépôt effectué</b>. <br> Vous bénéficiez de <b>15 minutes</b> pour éffectuer le dépôt. <br><br>
+                Passé ce délaie, <b>veuillez reprendre la procedure pour obtenir un nouveau code de retrait.</b>
               </p>
               <div>
-                <button name="send" class="btn btn-success btn-sm mb-3 mx-0" style="background-color: #2ed573; border: none;">
+                <button name="send" class="btn btn-success btn-sm mb-3 mx-2">
                   Dépôt effectuer
                 </button>
                 <!-- <button name="new" class="btn btn-primary btn-sm mb-3 " style="border: none;">
                   Demander un nouveau numéro
                 </button> -->
-                <button name="back" class="btn btn-danger btn-sm mb-3" style="border: none;">
+                <button name="back" class="btn btn-secondary btn-sm mb-3">
                   Annuler
                 </button>
               </div>
