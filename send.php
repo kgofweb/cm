@@ -70,7 +70,7 @@
               <!-- Mode d'envoi -->
               <div class="mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">send</span>
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">account_balance</span>
                   Mode d'envoi
                 </span>
                 <select class="form-select" name="sendMode" id="modeSend">
@@ -80,7 +80,7 @@
               <!-- Tel Number -->
               <div class="mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">smartphone</span>
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">call</span>
                   Téléphone
                 </span>
                 <div class="row">
@@ -135,7 +135,7 @@
               <!-- Tel Number -->
               <div class="mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">smartphone</span>
+                  <span class="material-icons" style="font-size: 1.2rem; margin-right: .3rem;">call</span>
                   Téléphone
                 </span>
                 <div class="row">
