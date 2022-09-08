@@ -63,7 +63,7 @@
             <hr>
             <div class="message">
               <p>
-                Vueiller effectuer un dépôt sur:
+                Veuillez effectuer un dépôt sur:
                 <span class="fw-bold">
                   <?php if (isset($senderMode)) {
                     echo $senderMode;
@@ -94,13 +94,13 @@
 
                 <br>
                 Ensuite cliquez sur <b>dépôt effectué</b>. <br> Vous bénéficiez de <b>15 minutes</b> pour éffectuer le dépôt. <br><br>
-                Passé ce délaie, <b>veuillez reprendre la procedure pour obtenir un nouveau code de retrait.</b>
+                Passé ce délaie, <b>veuillez reprendre la procédure pour obtenir un nouveau code de retrait.</b>
               </p>
               <div>
                 <button name="send" class="btn btn-success btn-sm mb-3 mx-2">
-                  Dépôt effectuer
+                  Dépôt effectué
                 </button>
-                <!-- <button name="new" class="btn btn-primary btn-sm mb-3 " style="border: none;">
+                <!-- <button name="newNumber" class="btn btn-primary btn-sm mb-3 " style="border: none;">
                   Demander un nouveau numéro
                 </button> -->
                 <button name="back" class="btn btn-secondary btn-sm mb-3">
