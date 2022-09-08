@@ -33,12 +33,12 @@
   }
 
   // Afrique de l'ouest
-  $civRussia = 0.090;
+  $civRussia = 0.0911;
   $russiaCIV = 9.8;
 
   // Afrique centrale
-  $rateAC = 0.089;
-  $rateRubAc = 10;
+  $rateAC = 0.0888;
+  $rateRubAc = 9.8;
 
   // Only guinee
   $guinRus = 0.00689;
