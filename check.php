@@ -237,7 +237,7 @@
             <div class="amount mb-4">
               <div class="d-flex align-items-center justify-content-between;">
                 <span class="fw-bold d-flex align-items-center;">
-                  <span class="material-icons" style="font-size: 1.5rem;">paid</span>
+                  <span class="material-icons" style="font-size: 1.5rem;">payments</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <b>
