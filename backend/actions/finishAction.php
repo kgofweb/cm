@@ -106,23 +106,23 @@ if (isset($_POST['send'])) {
             <h2 style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 1.5px solid #636e72;'>
               <span style='margin: .5rem auto;'>Nouvelle Transaction</span>
             </h2>
-            <span style='font-size: 1rem;'>Pays Expéditeur: <b style='color: #eb3b5a;'>$senderCountry</b> </span> <br>
-            <span style='font-size: 1rem;'>Mode Envoi: <b style='color: #eb3b5a;'>$senderMode</b> </span> <br>
-            <span style='font-size: 1rem;'>N° Téléphone Expéditeur: <b style='color: #eb3b5a;'>$senderPhone</b> </span> <br>
+            <span style='font-size: 1rem; color: #fff;'>Pays Expéditeur: <b style='color: #eb3b5a;'>$senderCountry</b> </span> <br>
+            <span style='font-size: 1rem; color: #fff;'>Mode Envoi: <b style='color: #eb3b5a;'>$senderMode</b> </span> <br>
+            <span style='font-size: 1rem; color: #fff;'>N° Téléphone Expéditeur: <b style='color: #eb3b5a;'>$senderPhone</b> </span> <br>
             <br>
-            <span style='font-size: 1rem;'>Pays Récepteur: <b style='color: #3867d6;'>$receiverCountry</b> </span> <br>
-            <span style='font-size: 1rem;'>N° Téléphone Récepteur: <b style='color: #3867d6;'>$receiverPhone</b> </span> <br>
+            <span style='font-size: 1rem; color: #fff;'>Pays Récepteur: <b style='color: #3867d6;'>$receiverCountry</b> </span> <br>
+            <span style='font-size: 1rem; color: #fff;'>N° Téléphone Récepteur: <b style='color: #3867d6;'>$receiverPhone</b> </span> <br>
             <br>
-            <span style='font-size: 1rem;'>Montant recut: <b style='color: #20bf6b;'>$total $change</b> </span> 
+            <span style='font-size: 1rem; color: #fff;'>Montant recut: <b style='color: #20bf6b;'>$total $change</b> </span> 
             <br/>
-            <span style='font-size: 1rem;'>Montant à transférer: <b style='color: #20bf6b;'>$finalAmount</b> </span>
+            <span style='font-size: 1rem; color: #fff;'>Montant à transférer: <b style='color: #20bf6b;'>$finalAmount</b> </span>
             <br>
             <br>
             <span style='font-size: 1rem; color: #fff;'>Nom du titulaire du compte: <b style='color: #0fb9b1;'>$name</b> </span> <br>
             <span style='font-size: 1rem; color: #fff;'>Son N° de téléphone: <b style='color: #0fb9b1;'>$agnentNumber</b> </span>
             <br>
             <br>
-            <span style='font-size: 1rem;'>Code de vérification recut par le client: <b style='color: #f7b731;'>$verify_code</b></span>
+            <span style='font-size: 1rem; color: #fff;'>Code de vérification recut par le client: <b style='color: #f7b731;'>$verify_code</b></span>
             <br>
             <br>
             <p style='font-size: .9rem; text-align: center; text-decoration: underline; color: #fff;'>Chapmoney &copy; 2022 </p>
@@ -141,7 +141,7 @@ if (isset($_POST['send'])) {
     }
 
   } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Une erreur est survenue; Veuillez réessayer";
   }
 }
 
