@@ -80,7 +80,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-12 mb-4" style="max-width: 35rem;">
+        <div class="col-12 mb-4" style="max-width: 35rem;">
           <div class="card card__receive mb-4">
             <div class="card-body">
               <h3 class="text-start text-white">
@@ -95,7 +95,7 @@
               </a>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
 
