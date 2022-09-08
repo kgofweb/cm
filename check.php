@@ -277,8 +277,8 @@
               ?>
               </span>
             </h4>
-            <span>Les frais de transaction s'élèvent à: <b><?= $percentage. ' '. $change ?></b> </span>
-            <span style="font-size: .9rem" class="text-primary fw-bold py-2">(Assurez vous d'avoir bien vérifié les infos entrées car il n'y aura plus de retour en arrière)</span>
+            <span>Frais de transaction à rajouter: <b><?= $percentage. ' '. $change ?></b> </span>
+            
             <div class="modal-footer justify-content-center">
               <button name="back" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
               <button name="send" class="btn btn-success">Valider</button>
