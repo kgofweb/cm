@@ -101,19 +101,19 @@
           </p> -->
 
           <p>
-            Le système vérifira la réception des fonds automatiquement et rendra <b>valide</b> le code de retrait au bout de <span class="fw-bold">5 minutes.
-            </span>
+            Le système vérifiera la réception des fonds automatiquement et rendra <b>valide</b> le code de retrait au bout de <b>5 minutes.
+            </b>
             <br>
             <span class="text-primary fs-3 fw-bold">
               <?php if (isset($verify_code)) { 
                 echo $verify_code; 
               } else {
-                echo "Une erreur s'est produite";
+                echo "Une erreur est survenue, veuillez réessayer.";
               } ?>
             </span>
             <br>
             <span class="fw-bold">
-              Remettez le code ci-dessus à votre destinataire pour qu'il puisse effectuer son retrait sur chapmoney.
+              Remettez le code ci-dessus et le numéro de téléphone qui a effectué le dépôt à votre destinataire pour qu'il puisse effectuer son retrait sur chapmoney.
             </span>
             <br>
             <br>
@@ -121,7 +121,7 @@
           </p>
           <!-- Back home -->
           <button name="backToHome" class="btn btn-success btn-sm mx-2">Terminer</button>
-          <button name="download" class="btn btn-primary btn-sm">Obtenir le Check</button>
+          <button name="download" class="btn btn-primary btn-sm">Obtenir son Check</button>
         </div>
 
       </form>
