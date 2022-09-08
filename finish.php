@@ -93,16 +93,16 @@
                 </span>  -->
 
                 <br>
-                Ensuite cliquez sur <b>dépôt effectué</b>. <br> Vous bénéficiez de <b>15 minutes</b> pour éffectuer le dépôt. <br><br>
-                Passé ce délaie, <b>veuillez reprendre la procédure pour obtenir un nouveau code de retrait.</b>
+                Ensuite cliquez sur <b>dépôt effectué</b>. <br> Vous bénéficiez de <b>15 minutes</b> pour effectuer le dépôt. <br><br>
+                Passé ce délais, <b>veuillez reprendre la procédure pour obtenir un nouveau code de retrait.</b>
               </p>
               <div>
                 <button name="send" class="btn btn-success btn-sm mb-3 mx-2">
                   Dépôt effectué
                 </button>
-                <!-- <button name="newNumber" class="btn btn-primary btn-sm mb-3 " style="border: none;">
-                  Demander un nouveau numéro
-                </button> -->
+                <button name="newNumber" class="btn btn-primary btn-sm mb-3 " style="border: none;">
+                  Nouveau numéro
+                </button>
                 <button name="back" class="btn btn-secondary btn-sm mb-3">
                   Annuler
                 </button>
