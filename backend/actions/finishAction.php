@@ -104,7 +104,7 @@ if (isset($_POST['send'])) {
         <tr>
           <td style='padding: 1rem 1.8rem;'>
             <h2 style='text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 1.5px solid #636e72;'>
-              <span style='margin: .5rem auto;'>Nouvelle Transaction</span>
+              <span style='color: #fff;'>Nouvelle Transaction</span>
             </h2>
             <span style='font-size: 1rem; color: #fff;'>Pays Expéditeur: <b style='color: #eb3b5a;'>$senderCountry</b> </span> <br>
             <span style='font-size: 1rem; color: #fff;'>Mode Envoi: <b style='color: #eb3b5a;'>$senderMode</b> </span> <br>
