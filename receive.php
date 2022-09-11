@@ -3,6 +3,26 @@
 <!-- Head -->
 <?php include './includes/receiveHead.php' ?>
 
+<style>
+  textarea:hover, 
+  input:hover, 
+  textarea:active, 
+  input:active, 
+  textarea:focus, 
+  input:focus,
+  button:focus,
+  button:active,
+  button:hover,
+  label:focus,
+  select:focus,
+  .btn:active,
+  .btn.active {
+    outline:0px !important;
+    -webkit-appearance:none !important;
+    box-shadow: none !important;
+  }
+</style>
+
 <body>
   <div class="container">
     <!-- Back button -->
@@ -13,33 +33,57 @@
       </a>
     </div>
 
-    <div class="card card__receive mt-5 mb-3 w-75 mx-auto">
-      <div class="row g-0">
-        <div class="col-md-4 my-auto img">
-          <img src="./frontend/asset/img/receive.webp" class="img-fluid rounded-start" alt="ChapMoney">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h4 class="card-title">
-              <i class="fa-solid fa-sack-dollar"></i>
-              Effectuer un retrait
-            </h4>
-            <hr class="mb-3">
-            <form action="" method="POST">
-              <div class="mt-4">
-                <label>Entrer le code de retrait</label>
-                <input type="text" class="form-control rounded-3">
-              </div>
-  
-              <button class="btn text-white d-block w-100 mt-4 mb-2 fw-bold" name="validate">Effectuer</button>
-            </form>
-            <div class="text-start mt-4">
-              <p>Cliquez ici pour <span><a href="./send.php">effectuer un transfert</a></span></p>
+    <form action="index.php" method="POST">
+      <div class="card mt-4 mb-2" style="background-color: #f6e58d; border: none;">
+        <div class="card-body mb-0">
+          <div class="container">
+            <div class="card-title">
+              <span class="fw-bold">Votre code de retrait</span>
+            </div>
+            <div class="d-flex flex-row">
+              <input type="text" maxlength="1" class="form-control text-center fw-bold fs-5 me-2"
+                style=" padding: .6rem; border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;"" autofocus="">
+              <input type="text" maxlength="1" class="form-control text-center fw-bold fs-5 mx-2"
+                style=" padding: .6rem; border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;"">
+              <input type="text" maxlength="1" class="form-control text-center fw-bold fs-5 mx-2"
+                style=" padding: .6rem; border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;"">
+              <input type="text" maxlength="1" class="form-control text-center fw-bold fs-5 mx-2"
+                style=" padding: .6rem; border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;"">
+              <input type="text" maxlength="1" class="form-control text-center fw-bold fs-5 mx-2"
+                style=" padding: .6rem; border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;"">
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <!-- Sender Phone -->
+      <div class="card" style="background-color: #74b9ff; border: none;">
+        <div class="card-body">
+          <div class="container">
+            <div class="">
+              <span class="fw-bold">Numéro envoyeur</span>
+              <input type="text" class="form-control fw-bold fs-6" style="border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background-color: #00b894; border: none;">
+        <div class="card-body">
+          <div class="container">
+            <div class="mb-4">
+              <span class="fw-bold">Nom de la banque</span>
+              <input type="text" class="form-control fw-bold fs-6" style="border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;">
+            </div>
+            <div>
+              <span class="fw-bold">Numéro de carte ou téléphone</span>
+              <input type="text" class="form-control fw-bold fs-6" style="border: none; border-radius: 0; background: none; border-bottom: 2px solid #fff;">
+            </div>
+
+            <button class="btn btn-success w-100 fw-bold mt-4">Valider</button>
+          </div>
+        </div>
+      </div>
+    </form>
 
   </div>
 </body>
