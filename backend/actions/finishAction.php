@@ -8,11 +8,12 @@ if (!isset($_SESSION['auth'])) {
 
 // PHP Mailer
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 // Import PHPMailer components
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
 // Variables
 $senderCountry = $_SESSION['countryOne'];
@@ -71,6 +72,7 @@ switch ($senderCountry) {
     break;
 }
 
+
 if (isset($_POST['send'])) {
   // Send to email
   $mail = new PHPMailer(true);
@@ -85,9 +87,10 @@ if (isset($_POST['send'])) {
     //Enable SMTP authentication
     $mail->SMTPAuth = true;
     //SMTP username
-    $mail->Username = 'testmyapphere01@gmail.com';
+    // $mail->Username = 'testmyapphere01@gmail.com';
+    $mail->Username = 'officialgouldiggers@gmail.com';
     //SMTP password
-    $mail->Password = 'vfmgqlvbwwopousl';
+    $mail->Password = 'liuiuwbfnpdcrujq';
     //Enable TLS encryption;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
@@ -141,7 +144,7 @@ if (isset($_POST['send'])) {
     }
 
   } catch (Exception $e) {
-    echo "Une erreur est survenue; Veuillez réessayer";
+    echo "Une erreur est survenue; Veuillez réessayer. $e";
   }
 }
 
@@ -150,4 +153,3 @@ if (isset($_POST['back'])) {
   $_SESSION['error'] = 'Votre transaction a été annuler';
   header('Location: ./index.php');
 }
-
