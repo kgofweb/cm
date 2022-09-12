@@ -165,7 +165,7 @@
             <div class="sender mb-4">
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">public</span>
+                  <span class="material-icons" style="font-size: 1.5rem; color: #4834d4;">public</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php 
@@ -177,7 +177,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">account_balance</span>
+                  <span class="material-icons" style="font-size: 1.5rem; color: #22a6b3;">account_balance</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php 
@@ -189,7 +189,7 @@
               </div>
               <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="fw-bold d-flex align-items-center">
-                  <span class="material-icons" style="font-size: 1.5rem;">call</span>
+                  <span class="material-icons" style="font-size: 1.5rem; color: #6ab04c;">call</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <?php
@@ -207,7 +207,7 @@
               <div class="receiver mb-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                   <span class="fw-bold d-flex align-items-center">
-                    <span class="material-icons" style="font-size: 1.5rem;">public</span>
+                    <span class="material-icons" style="font-size: 1.5rem; color: #4834d4;">public</span>
                   </span>
                   <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                     <?php 
@@ -218,8 +218,8 @@
                   </span>
                 </div>
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                  <span class="fw-bold d-flex align-items-center">
-                    <span class="material-icons" style="font-size: 1.5rem;">call</span>
+                  <span class="fw-bold d-flex align-items-center"> 
+                    <span class="material-icons" style="font-size: 1.5rem; color: #6ab04c;">call</span>
                   </span>
                   <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                     <?php 
@@ -237,7 +237,7 @@
             <div class="amount mb-4">
               <div class="d-flex align-items-center justify-content-between;">
                 <span class="fw-bold d-flex align-items-center;">
-                  <span class="material-icons" style="font-size: 1.5rem;">payments</span>
+                  <span class="material-icons" style="font-size: 1.5rem; color: #f0932b;">payments</span>
                 </span>
                 <span class="country w-100 text-start fs-6" style="margin-left: 2rem;">
                   <b>

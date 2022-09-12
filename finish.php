@@ -40,6 +40,19 @@
 <html lang="en">
 <!-- Head -->
 <?php include('./includes/finishHead.php') ?>
+
+<style>
+  @media screen and (max-width: 540px) {
+    .alert {
+      width: 55% !important;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .alert {
+      width: 100% !important;
+    }
+  }
+</style>
 <body>
   <div class="container">
     <!-- Back -->
