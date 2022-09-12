@@ -1,1 +1,1 @@
-<!-- Connect to db -->
+<!-- Config to data base -->
